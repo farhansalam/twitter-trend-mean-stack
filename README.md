@@ -1,22 +1,31 @@
 twitter-trend-mean-stack
 Coding challenge for Red Buffer.
 
-Usage: To run server side JavaScript and for the database, the following need to be installed: 
-1 Node.js - for the web server and running server side JavaScript. 
-2 MongoDB - the database.
+Usage: 
 
-Open the application directory on the terminal, and run the following commands: 
- $ npm install --dev 
- $ bower install
+To run server side JavaScript and for the database, the following need to be installed
 
-Start the database service by running the following command (where mongo exists):
- $ mongod
+Node.js - for the web server and running server side JavaScript.
 
-Run the following command to import the sample collection for the database: 
- $ <mongodb directory>/mongoimport --db trendingtwitter-dev --collection trendings --file ~//sampleset.json
+MongoDB - the database.
 
-Start the application using the command: 
- $ npm start
+Open the application directory on the terminal, and run the following commands
+
+$npm install --dev 
+
+$bower install
+
+Start the database service by running the following command (where mongo exists)
+
+$mongod
+
+Run the following command to import the sample collection for the database
+
+$~/{path to mongodb directory}/mongoimport --db trendingtwitter-dev --collection trendings --file ~/{path to application directory}/sampleset.json
+
+Start the application using the command
+
+$npm start
 
 The server can be accessed at http://localhost:3000
 
