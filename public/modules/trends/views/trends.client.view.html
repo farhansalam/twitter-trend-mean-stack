@@ -1,0 +1,19 @@
+<section data-ng-controller="TrendsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Locations</h1>
+    </div>
+    <!-- this is the new search input field -->
+    <div class="form-group">
+        <input type="text" ng-model="search" typeahead="trend as trend.location for trend in trends | filter:$viewValue | limitTo:8" class="form-control" typeahead-on-select="trendSearch($item)" placeholder="Search Location...">
+    </div>
+    <!-- end -->
+    <div class="list-group">
+        <a data-ng-repeat="trend in trends | limitTo: offset - trends.length | limitTo: pageSize" data-ng-href="#!/locations/{{trend._id}}" class="list-group-item">
+            <h4 class="list-group-item-heading" data-ng-bind="trend.location"></h4>
+            <span data-ng-bind="trend.trend"></span>
+        </a>
+    </div>
+    <!-- this is the paging control -->
+    <pagination total-items="trends.length" ng-model="currentPage" ng-change="pageChanged()" max-size="pageSize" ng-show="trends.length > pageSize"></pagination>
+    <!-- end -->
+</section>
